@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block styles %}<link rel="stylesheet" href="{% static 'css/success_handle.css' %}"/>{% endblock styles %}
+{% block content %}
+    <div class="card">
+        <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+            <i class="checkmark">✓</i>
+        </div>
+        <h1 class="main_message">Success</h1> 
+        <p class="tagline">We received your purchase request;<br/> we'll be in touch shortly!</p>
+    </div>
+{% endblock content %}

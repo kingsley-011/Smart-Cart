@@ -1,0 +1,11 @@
+{% include "main.html" %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <label>Enter your Mobile Number</label>
+        <input type="number" name="mobile" id="">
+        <input type="hidden" name="next" value="{{ request.path }}">
+        <button type="submit">login</button>
+    </form>
+{% endblock content %}

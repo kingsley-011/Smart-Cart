@@ -1,0 +1,95 @@
+.refer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.refer-title {
+  font-size: 32px;
+  color: #007bff;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #007bff;
+}
+
+.url-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  min-width: 500px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#copy-button {
+  background: none;
+}
+
+button i {
+  font-size: 18px;
+  font-family: "FontAwesome";
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.table-container {
+    min-width: 500px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #6b6464;
+  border-radius: 5px;
+}
+
+thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+}
+
+#send-email-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px; /* Add some spacing between the URL input and the button */
+}

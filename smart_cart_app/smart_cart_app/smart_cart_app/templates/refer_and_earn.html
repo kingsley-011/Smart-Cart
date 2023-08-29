@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block styles %}<link rel="stylesheet" href="{% static 'css/refer_and_earn.css' %}"/>{% endblock styles %}
+{% block content %}
+<div class="refer-container">
+    <h1 class="refer-title">Refer & Earn</h1>
+    <div class="url-container">
+      <input type="text" id="referral-url" value={{refer_url}} readonly>
+      <button id="copy-button" onclick="copyReferralUrl()">
+        <i class="fa-solid fa-clipboard-check fa-beat" style="color: #336fd7;"></i>
+      </button>
+      <button id="send-email-button"><a href="#"><i class="fa-solid fa-share fa-shake" style="color: #4176d2;"></i></a></button>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for email, phonenum in refer_data %}
+          <tr>
+            <td>{{email}}</td>
+            <td>{{phonenum}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% block scripts %}
+<script>
+    function copyReferralUrl() {
+        const referralUrl = document.getElementById("referral-url").innerText;
+
+        const textarea = document.createElement("textarea");
+        textarea.value = referralUrl;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        alert("Referral URL copied to clipboard!");
+    }
+</script>
+{% endblock scripts %}
+{% endblock content %}

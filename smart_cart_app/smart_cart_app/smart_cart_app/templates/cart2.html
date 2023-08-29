@@ -1,0 +1,34 @@
+{% extends 'main.html' %} {% load static %} 
+{% block title %}Cart 2{% endblock title %} 
+{% block styles %}<link
+  rel="stylesheet"
+  href="{% static 'css/cart2.css' %}"
+/>{% endblock styles %}
+ {% block content %}
+<div class="invoice-container">
+  <h1>Invoice</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Product ID</th>
+        <th>Price (INR)</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for product_name, product_id, product_price in product_details %}
+      <tr>
+        <td>{{product_name}}</td>
+        <td>{{product_id}}</td>
+        <td>Rs.{{product_price}}</td>
+      </tr> 
+    {% endfor %}
+    <tr>
+        <td colspan="2">Total Price</td>
+        <td>Rs.{{total_price}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <button class="payment-button"><a href='{% url "payment" %}' style="text-decoration:none; color: white">Pay Now</a></button>
+</div>
+{% endblock content %}

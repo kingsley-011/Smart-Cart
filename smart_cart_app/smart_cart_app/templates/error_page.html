@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block styles %}<link rel="stylesheet" href="{% static 'css/error_page.css' %}"/>{% endblock styles %}
+{% block content %}
+    <div class="container">
+        <div class="gif">
+            <img src="https://i.postimg.cc/2yrFyxKv/giphy.gif" alt="gif_ing" />
+        </div>
+        <div class="content">
+            {% if error %}
+            <h1 class="main-heading">This page is gone.</h1>
+            {% endif %}
+            <a href="{% url 'home' %}">
+                <button>Back to home <i class="far fa-hand-point-right"></i></button>
+            </a>
+        </div>
+    </div>
+{% endblock content %}

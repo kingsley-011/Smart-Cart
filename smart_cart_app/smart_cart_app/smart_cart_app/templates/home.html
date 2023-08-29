@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block styles %}<link rel="stylesheet" href="{% static 'css/home.css' %}"/>{% endblock styles %}
+{% block content %}
+    <div class="container">
+        <div class="button-wrapper">
+        <a href="{% url 'cart1' %}" class="cart-button cart-button-1">Cart 1</a>
+        <br/>
+        <a href="{% url 'cart2' %}" class="cart-button cart-button-2">Cart 2</a>
+        </div>
+    </div>
+{% endblock content %}

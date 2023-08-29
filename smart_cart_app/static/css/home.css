@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 40px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s ease-in-out;
+}
+
+.cart-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cart-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cart-button-1 {
+  background-color: #ff5722;
+}
+
+.cart-button-2 {
+  background-color: #4caf50;
+}
+
+/* Add a 3D rotating effect */
+@keyframes rotate3D {
+  0% {
+    transform: rotateX(0) rotateY(0);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* Apply the 3D rotating effect to the buttons */
+.button-wrapper:hover .button {
+  animation: rotate3D 2s linear infinite;
+}
+
+/* Add a pulsing effect */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Apply the pulsing effect to the buttons */
+.button:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+  animation: pulse 1s infinite;
+}
